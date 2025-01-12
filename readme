@@ -1,0 +1,29 @@
+Sinema Müşteri Kayıt Sistemi’nde, müşterileri, filmleri ve salonları yönetebilmek amacıyla aşağıdaki özellikler sunulmaktadır:
+
+BaseEntity (Temel Sınıf):
+- Tüm varlıkların (örneğin Müşteri, Salon gibi) ortak özelliklerini barındıran temel sınıftır.
+- id, createdDate gibi ortak alanlara sahip olabilir.
+
+Musteri Sınıfı (BaseEntity’den türetilir):
+- Müşteriye ait isim, soyisim, email gibi alanlar içerir.
+- Bu sınıf, BaseEntity sınıfının ortak alanlarını da kullanır.
+
+Film Sınıfı:
+- Bir filme ait ad, sure, tur (tür) alanlarını içerir.
+- Filmin hangi salonlarda gösterildiğine dair bilgiyi (listeler şeklinde) tutar.
+
+Salon Sınıfı (BaseEntity’den türetilir):
+- Bir salonun salonAdi, kapasite gibi özelliklerini içerir.
+- O salonda gösterilen filmlerin listesi ve filme kayıtlı müşterilerinin bilgilerine ulaşılabilir.
+
+Interface (Örnek: IKayit veya IBiletSistemi):
+- Projede en az bir adet arayüz (interface) bulunur.
+- Uygulamayı zorunlu kıldığı metodlar, bu interface’i uygulayan sınıflar tarafından yazılmak zorundadır.
+
+Polymorphism (Çok Biçimlilik):
+- BaseEntity sınıfında tanımlanan BilgiGoster() metodu, Musteri ve Salon gibi sınıflarda override edilerek farklı şekillerde davranış gösterebilir.
+
+Veri Kaynağı (JSON veya XML):
+- Proje içerisinde oluşturulan Musteri.json, Film.json, Salon.json gibi dosyalar üzerinde kayıt, güncelleme, silme ve listeleme işlemleri yapılır.
+- Alternatif olarak .xml formatı kullanarak da benzer işlemler yapılabilir.
+
